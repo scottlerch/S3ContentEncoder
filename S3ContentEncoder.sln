@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "S3ContentEncoder", "S3ContentEncoder\S3ContentEncoder.csproj", "{4BE3A785-F9AD-46D1-85C3-12A5FA8F3CA4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{FAF45DF6-58F0-4F03-AF12-C4C5D6CBEA21}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{0268AB0B-0409-4C35-919F-75377343E3C9}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{A22E06FB-539E-4F04-9F9B-2CFD8F28B6E9}"
+	ProjectSection(SolutionItems) = preProject
+		build.bat = build.bat
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4BE3A785-F9AD-46D1-85C3-12A5FA8F3CA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BE3A785-F9AD-46D1-85C3-12A5FA8F3CA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BE3A785-F9AD-46D1-85C3-12A5FA8F3CA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BE3A785-F9AD-46D1-85C3-12A5FA8F3CA4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
