@@ -16,7 +16,7 @@ namespace S3ContentEncoder
 		[Option('b', "bucket", Required = true)]
 		public string Bucket { get; set; }
 
-		[Option('p', "prefix", Required = true)]
+		[Option('p', "prefix", Required = false)]
 		public string Prefix { get; set; }
 
 		[Option('e', "encoding", DefaultValue = "gzip")]
