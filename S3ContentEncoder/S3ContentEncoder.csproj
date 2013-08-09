@@ -64,12 +64,13 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <PropertyGroup>
-    <PostBuildEvent>"$(SolutionDir)packages\ILRepack.1.22.2\tools\ILRepack.exe" /out:"$(TargetPath)" "$(TargetPath)" "$(TargetDir)AWSSDK.dll" "$(TargetDir)CommandLine.dll"
-del "$(TargetDir)*.dll"
-del "$(TargetDir)*.xml"
+    <PostBuildEvent>:: "$(SolutionDir)packages\ILRepack.1.22.2\tools\ILRepack.exe" /out:"$(TargetPath)" "$(TargetPath)" "$(TargetDir)AWSSDK.dll" "$(TargetDir)CommandLine.dll"
+:: del "$(TargetDir)*.dll"
+:: del "$(TargetDir)*.xml"
 mkdir "$(SolutionDir)bin"
 copy "$(TargetPath)" "$(SolutionDir)bin"
-copy "$(TargetPath).config" "$(SolutionDir)bin"</PostBuildEvent>
+copy "$(TargetPath).config" "$(SolutionDir)bin"
+copy "$(TargetDir)*.dll" "$(SolutionDir)bin"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
