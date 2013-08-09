@@ -6,6 +6,8 @@ Updates all objects with a prefix in an S3 bucket to use the specified encoding 
 Usage:
 ------
 
+Get help:
+
 	> S3ContentEncoder.exe --help 
 	S3ContentEncoder 1.0.0.0                                                                                
 	Copyright Scott Lerch 2013                                                                            
@@ -21,6 +23,8 @@ Usage:
 	  -e, --encoding     (Default: gzip)                                                                    
                                                                                                         
 	  --help             Display this help screen.`                                               
+
+Run:
 
 	> S3ContentEncoder.exe --accessKey=XYZ --secretKey=XYZ --bucket=mybucket --prefix=some/directory --encoding=gzip
 
