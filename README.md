@@ -3,8 +3,8 @@ S3ContentEncoder
 
 Updates all objects with a prefix in an S3 bucket to use the specified encoding (e.g. gzip/deflate) and set the Content-Encoding HTTP header accordingly.
 
-Usage:
-------
+Usage
+-----
 
 Get help:
 
@@ -28,8 +28,8 @@ Run:
 
 	> S3ContentEncoder.exe --accessKey=XYZ --secretKey=XYZ --bucket=mybucket --prefix=some/directory --encoding=gzip
 
-Current limitations:
---------------------
+Limitations
+-----------
 
 - Only handles gzip
 - Does not preserve ACLs, metadata, or other custom headers
