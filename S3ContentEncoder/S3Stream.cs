@@ -51,30 +51,6 @@ namespace S3ContentEncoder
 
 		public ContentEncoding ContentEncoding { get; private set; }
 
-		private void EnsureResponseExists()
-		{
-			if (this.response == null)
-			{
-				var request = new GetObjectRequest
-				{
-					BucketName = this.bucketName,
-					Key = this.objectKey,
-					ByteRangeLong = new Amazon.S3.Model.Tuple<long, long>(this.byteOffset, this.totalBytes),
-				};
-
-				this.response = this.s3Client.GetObject(request);
-			}
-		}
-
-		private void CleanupResponse()
-		{
-			if (this.response != null)
-			{
-				this.response.Dispose();
-				this.response = null;
-			}
-		}
-
 		public override bool CanRead
 		{
 			get { return true; }
@@ -134,6 +110,30 @@ namespace S3ContentEncoder
 					throw new InvalidDataException(string.Format("Only received {0} of {1} bytes", this.byteOffset, this.totalBytes));
 				},
 				ex => this.CleanupResponse());
+		}
+
+		private void EnsureResponseExists()
+		{
+			if (this.response == null)
+			{
+				var request = new GetObjectRequest
+				{
+					BucketName = this.bucketName,
+					Key = this.objectKey,
+					ByteRangeLong = new Amazon.S3.Model.Tuple<long, long>(this.byteOffset, this.totalBytes),
+				};
+
+				this.response = this.s3Client.GetObject(request);
+			}
+		}
+
+		private void CleanupResponse()
+		{
+			if (this.response != null)
+			{
+				this.response.Dispose();
+				this.response = null;
+			}
 		}
 
 		public override long Seek(long offset, SeekOrigin origin)
